@@ -6,7 +6,7 @@ def parse_cast(cast_str):
     """Parse string representation of cast list into actual list"""
     try:
         return ast.literal_eval(str(cast_str)) if pd.notna(cast_str) else []
-    except:
+    except (ValueError, SyntaxError):
         return []
 
 def clean_list_format(value):
